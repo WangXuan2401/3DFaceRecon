@@ -10,18 +10,5 @@ This is the official repository for ["Eye Motion Matters for 3D Face Reconstruct
 conda env creat -f environment.yml
 conda activate 3dface_eye
 ```
-2. 
 
-### Data
-
-- **FFHQ:** 
-
-- **CEW:**
-
-### Train
-
-### Test
-
-### Contact 
-
-### Acknowledgement
+More code coming soon.

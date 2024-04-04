@@ -3,7 +3,6 @@ import importlib
 import torch.utils.data
 from data.base_dataset import BaseDataset
 
-
 def find_dataset_using_name(dataset_name):
     dataset_filename = "data." + dataset_name + "_dataset"
     datasetlib = importlib.import_module(dataset_filename)
@@ -34,11 +33,6 @@ def create_dataset(opt, rank=0):
 
 class CustomDatasetDataLoader():
     def __init__(self, opt, rank=0):
-        """Initialize this class
-
-        Step 1: create a dataset instance given the name [dataset_mode]
-        Step 2: create a multi-threaded data loader.
-        """
         self.opt = opt
         dataset_class = find_dataset_using_name(opt.dataset_mode)
         self.dataset = dataset_class(opt)

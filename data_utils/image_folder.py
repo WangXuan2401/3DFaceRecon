@@ -1,9 +1,9 @@
 import numpy as np
 import torch.utils.data as data
-
-from PIL import Image
 import os
 import os.path
+
+from PIL import Image
 
 IMG_EXTENSIONS = [
     '.jpg', '.JPG', '.jpeg', '.JPEG',
@@ -11,10 +11,8 @@ IMG_EXTENSIONS = [
     '.tif', '.TIF', '.tiff', '.TIFF',
 ]
 
-
 def is_image_file(filename):
     return any(filename.endswith(extension) for extension in IMG_EXTENSIONS)
-
 
 def make_dataset(dir, max_dataset_size=float("inf")):
     images = []
@@ -27,10 +25,8 @@ def make_dataset(dir, max_dataset_size=float("inf")):
                 images.append(path)
     return images[:min(max_dataset_size, len(images))]
 
-
 def default_loader(path):
     return Image.open(path).convert('RGB')
-
 
 class ImageFolder(data.Dataset):
 

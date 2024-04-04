@@ -12,7 +12,6 @@ import pickle
 from util.preprocess import align_img, estimate_norm
 from util.load_mats import load_lm3d
 
-
 def default_flist_reader(flist):
     """
     flist format: impath label\nimpath label\n ...(same to caffe's filelist)
